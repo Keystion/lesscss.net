@@ -1,9 +1,9 @@
 ---
-title: Browser support
+title: 浏览器支持
 ---
 
-Less only supports running on modern browsers (recent versions of Chrome, Firefox, Safari and IE). We do not want to encourage client-side usage in production - this is because it adds a performance degradation for the user, who will sees a delay (even if it is sub 1 second) while Less styles are compiled to CSS, and may cause cosmetic issues if Javascript errors occur.
+LESS只支持在现代浏览器中运行（最新版本的Chrome, Firefox, Safari 和 IE）。我们不建议在生产环境中使用LESS客户端，因为在将LESS编译成CSS的时候，用户会看到加载延迟的现象，即便在浏览器中有不足一秒的加载延迟，但也会降低性能。另外，如果在Javascrip执行错误的时候，还会引起美观问题。
 
-There are reasons to use client-side less in production, such as if you want to allow users to tweak variables which will affect the theme and you want to show it to them in real-time - in this instance a user is not worried about waiting for a style to update before seeing it.
+某些情况下在生产环境中使用LESS客户端是合理的，例如你想让用户去调整影响主题的LESS变量，然后你想将这些LESS变量实时展示给他们看，在这种情况下，你就不用担心要等待样式更新之后才能让他们看到调整之后的Less变量。
 
-If you need to run less in an older browser, please use an [es-5 shim](https://github.com/kriskowal/es5-shim) which will add the javascript features that less requires.
+LESS1.4不再包含es5-shim，因此要兼容IE低版本，请在引用less.js之前手工引入[es5-shim.js](https://github.com/kriskowal/es5-shim)。
